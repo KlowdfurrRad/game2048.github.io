@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body onload="startup()">
+  <div class="total-container">
+    <h1>2048</h1> <!--Title at the top-->
+    <div class="game-container">
+      <canvas id="myCanvas" width="477" height="477">hello</canvas> 
+      <div class="controls-container">
+        <p class="INSTRUCTIONS">
+          <B>INSTRUCTIONS:</B>
+          Use the keys or buttons to control <br>
+          the number board and try to make a 2048.<br>
+          The shortcut for new game is the letter "N".
+        </p>
+        <center><b>Score:</b></center>
+        <p id="demo" align="center">N/A</p>
+        <P ALIGN="CENTER">
+          <button onclick="gravityup()">UP</button><BR><br>
+          <button onclick="gravityleft()">LEFT</button>
+          <button onclick="gravitydown()">DOWN</button>
+          <button onclick="gravityright()">RIGHT</button><BR><BR>
+          <button onclick="reset()">New Game</button>
+        </P>
+        <center><b>HighScore:</b></center>
+        <p id="high" align="center">N/A</p>
+      </div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+
+</html>

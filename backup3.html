@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /* Use flexbox to arrange elements */
+            justify-content: center;
+            align-items: center;
+            background-color: #faf8ef;
+            height: 100vh;
+        }
+
+        .total-container {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            align-items: center;
+        }
+
+        .game-container {
+            display: flex;
+            flex-direction: row;
+            /* Changed to vertical */
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            /* Add padding for spacing */
+            border: 10px solid #d3d3d3;
+            border-radius: 10px;
+            background-color: white;
+            /* Set background color for the container */
+        }
+
+        .controls-container {
+            display: flex;
+            padding: 20px;
+            flex-direction: column;
+            /* Stack buttons vertically */
+            align-items: center;
+        }
+
+
+        h1 {
+            color: #776e65;
+            font-size: 72px;
+            /* Large font size for visibility */
+            font-weight: bold;
+            text-shadow: 2px 2px #bbada0;
+            /* Subtle shadow effect */
+            margin-bottom: 20px;
+            /* Spacing between title and canvas */
+        }
+
+        .INSTRUCTIONS {
+            font-family: 'Courier New';
+            margin-bottom: 40px;
+        }
+
+        canvas {
+            background-color: #faf8ef;
+            border: 10px solid #d3d3d3;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #8f7a66;
+            /* Button color */
+            color: white;
+            /* Text color */
+            border: none;
+            /* No border */
+            padding: 10px 20px;
+            /* Top and bottom padding, left and right padding */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            /* Text size */
+            margin: 4px 2px;
+            /* Margin around buttons */
+            cursor: pointer;
+            /* Cursor to indicate clickable */
+            border-radius: 5px;
+            /* Rounded corners */
+            box-shadow: 0 4px #666;
+            /* Shadow effect for depth */
+        }
+
+        button:hover {
+            background-color: #9f8b76;
+            /* Slightly lighter color on hover */
+        }
+
+        button:active {
+            background-color: #8f7a66;
+            box-shadow: 0 2px #666;
+            /* Smaller shadow for pressed effect */
+            transform: translateY(2px);
+            /* Move button down to mimic press */
+        }
+
+        .game-score {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            color: #333;
+            /* Dark gray text color */
+            margin-bottom: 10px;
+            /* Space between score and high score */
+        }
+
+        #score {
+            font-weight: bold;
+            /* Bold font for the score */
+        }
+
+        #highScore {
+            font-style: italic;
+            /* Italic font for the high score */
+        }
+    </style>
+
+</head>
+
+<body onload="startup()">
+    <div class="total-container">
+        <h1>2048</h1> <!-- Title at the top -->
+        <div class="game-container">
+            <canvas id="myCanvas" width="460" height="460">hello</canvas> <!-- Canvas below the title -->
+            <div class="controls-container">
+                <p class="INSTRUCTIONS">
+                    <B>INSTRUCTIONS:</B>
+                    Use the keys or buttons to control <br>
+                    the number board and try to make a 2048.<br>
+                    The shortcut for new game is the letter "N".
+                </p>
+                <center><b>Score:</b></center>
+                <p id="demo" align="center"></p>
+                <P ALIGN="CENTER">
+                    <button onclick="gravityup()">UP</button><BR><br>
+                    <button onclick="gravityleft()">LEFT</button>
+                    <button onclick="gravitydown()">DOWN</button>
+                    <button onclick="gravityright()">RIGHT</button><BR><BR>
+                    <button onclick="reset()">New Game</button>
+                </P>
+                <center><b>HighScore:</b></center>
+                <p id="high" align="center">N/A</p>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+
+</html>
